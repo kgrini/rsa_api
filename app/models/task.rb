@@ -1,8 +1,13 @@
 class Task < ApplicationRecord
   belongs_to :user
 
-  def self.list(flag = 'done')
-    where.not(status: flag)
+  before_save :default_values, on: :create
+
+  def self.list(conditions)
+    where(
+      status: conditions[:status] ? conditions[:status] : 'new',
+      tag: conditions[:tag]
+    )
   end
 
   def close
@@ -10,5 +15,12 @@ class Task < ApplicationRecord
       :status,
       'done'
     )
+  end
+
+  private
+
+  def default_values
+    self.status ||= 'new'
+    self.tag = self.tag.downcase
   end
 end

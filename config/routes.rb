@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   post 'tasks/create', to: 'tasks#create'
-  post 'tasks/close/:id', to: 'tasks#close'
-  get 'tasks/list', to: 'tasks#list'
+  put  'tasks/close/:id', to: 'tasks#close'
+  get  'tasks/list', to: 'tasks#list'
 end
