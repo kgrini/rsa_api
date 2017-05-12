@@ -6,7 +6,7 @@ For authentication is using [devise_token_auth](https://github.com/lynndylanhurl
 Status of APi's could be success or failed
 ####Sign-up & sign-in
 #####To sign-up should be used custom made API which allows to create User without email confirmation
-######/auth/registration
+?/auth/registration
 
 ```
 {
@@ -29,7 +29,7 @@ User would be created and confirmed. After that user could be signed-in. Respons
 }
 ```
 #####To sign-in should be used link and json example bellow
-######/auth/sign_in
+>/auth/sign_in
 
 ```
 {
@@ -66,7 +66,7 @@ In response body would be signed in user model and token in header as on example
 Task status is adding automatically on creation and it's 'new'
 When task is closed it has status 'done'
 #####To create task should be used json example and link bellow
-######/task/create
+>/task/create
 
 ```
 {
@@ -89,7 +89,7 @@ Example of response
 ```
 
 #####To close task should be used json example and link bellow
-######/task/create
+>/task/create
 
 ```
 {
@@ -119,7 +119,7 @@ Example of response
 ```
 
 ####To receive list of tasks selected by tag should be used json example and link bellow
-######/task/create
+>/task/create
 
 ```
 {
@@ -142,7 +142,7 @@ Example of response
 ```
 
 #####To receive list of tasks selected by tag and status should be used json example and link bellow
-######/task/create
+>/task/create
 
 ```
 {
