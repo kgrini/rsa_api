@@ -66,7 +66,7 @@ In response body would be signed in user model and token in header as on example
 Task status is adding automatically on creation and it's 'new'
 When task is closed it has status 'done'
 #####To create task should be used json example and link bellow
->/task/create
+>/tasks/create
 
 ```
 {
@@ -89,7 +89,7 @@ Example of response
 ```
 
 #####To close task should be used json example and link bellow
->/task/create
+>/tasks/close
 
 ```
 {
@@ -119,7 +119,7 @@ Example of response
 ```
 
 ####To receive list of tasks selected by tag should be used json example and link bellow
->/task/create
+>/tasks/list
 
 ```
 {
@@ -142,7 +142,7 @@ Example of response
 ```
 
 #####To receive list of tasks selected by tag and status should be used json example and link bellow
->/task/create
+>/tasks/list
 
 ```
 {
