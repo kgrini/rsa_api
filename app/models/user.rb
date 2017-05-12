@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
           :confirmable, :omniauthable
   include DeviseTokenAuth::Concerns::User
 
+  has_many :tasks
   validates :name, :nickname, :email, :password,  presence: true
 end

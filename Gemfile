@@ -31,10 +31,13 @@ gem 'rack-cors', :require => 'rack/cors'
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
 
+  gem 'factory_girl'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 
   gem 'pry-rails'
+
 end
 
 group :development do

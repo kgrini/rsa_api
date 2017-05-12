@@ -1,15 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe UsersController do
+RSpec.describe TasksController do
   describe '#create' do
-    let!(:dummy_user) {
-      {
-        name: 'dummy',
-        nickname: 'dummy_nick',
-        email: 'dummy@example.com',
-        password: 'password'
-      }
-    }
     context 'receive status 200' do
       it 'should be successful' do
         post :create, user: dummy_user, format: :json
