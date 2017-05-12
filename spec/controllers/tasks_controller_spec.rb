@@ -35,7 +35,7 @@ RSpec.describe TasksController do
         auth_headers
         post :create, task: task, format: :json
         response_result = JSON.parse(response.body)
-        expect(response_result['data']['tag']).to eq(task[:tag])
+        expect(response_result['data']['tag']).to eq(task[:tag].downcase)
         expect(response_result['data']['status']).to eq('new')
       end
     end
@@ -153,7 +153,7 @@ RSpec.describe TasksController do
       end
     end
 
-    context 'receive tasks with status new' do
+    context 'receive no tasks without tag' do
       it 'should return a list by default' do
         auth_headers
         create_list(:task, 4, user: create(:user))
@@ -165,7 +165,7 @@ RSpec.describe TasksController do
 
         get :list, format: :json
         response_result = JSON.parse(response.body)
-        expect(response_result['data'].length).to eq(3)
+        expect(response_result['data'].length).to eq(0)
       end
     end
 

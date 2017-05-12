@@ -35,7 +35,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:tag, :deadline_time)
+    params.require(:task).permit(:tag, :status, :deadline_time)
   end
 
   def validate_params
