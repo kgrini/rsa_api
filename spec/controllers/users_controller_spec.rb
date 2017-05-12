@@ -66,5 +66,14 @@ RSpec.describe UsersController do
         expect(response_result['data']['name'][0]).to eq('can\'t be blank')
       end
     end
+    context 'send blank params' do
+      it 'should receive an error' do
+        dummy_user = {}
+        post :create, user: dummy_user, format: :json
+        response_result = JSON.parse(response.body)
+        expect(response_result['message']).to eq('Failed to create a user due to missing params')
+        expect(response_result['data']).to eq([])
+      end
+    end
   end
 end
