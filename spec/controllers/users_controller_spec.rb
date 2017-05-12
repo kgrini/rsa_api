@@ -23,7 +23,7 @@ RSpec.describe UsersController do
         expect(response.header['Content-Type']).to include 'application/json'
         response_result = JSON.parse(response.body)
         expect(response_result).to_not be_nil
-        expect(response_result['status']).to eq('Successfully created a user')
+        expect(response_result['message']).to eq('Successfully created a user')
         expect(response_result['data']).to include('name' => 'dummy')
       end
     end
@@ -48,7 +48,7 @@ RSpec.describe UsersController do
         }
         post :create, user: dummy_user, format: :json
         response_result = JSON.parse(response.body)
-        expect(response_result['status']).to eq('Failed to create a user')
+        expect(response_result['message']).to eq('Failed to create a user')
         expect(response_result['data']['name'][0]).to eq('can\'t be blank')
       end
     end
@@ -62,7 +62,7 @@ RSpec.describe UsersController do
         }
         post :create, user: dummy_user, format: :json
         response_result = JSON.parse(response.body)
-        expect(response_result['status']).to eq('Failed to create a user')
+        expect(response_result['message']).to eq('Failed to create a user')
         expect(response_result['data']['name'][0]).to eq('can\'t be blank')
       end
     end

@@ -3,9 +3,9 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     result = if user.save
-      { status: 'Successfully created a user', data: user }
+      { message: 'Successfully created a user', data: user }
     else
-      { status: 'Failed to create a user', data: user.errors.messages }
+      { message: 'Failed to create a user', data: user.errors.messages }
     end
     render_response(result)
   end
